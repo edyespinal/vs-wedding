@@ -1,0 +1,83 @@
+{
+  "extends": "next/core-web-vitals",
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    "camelcase": "warn",
+    "curly": "error",
+    "block-scoped-var": "error",
+    "dot-notation": "error",
+    "eol-last": ["error", "always"],
+    "eqeqeq": "error",
+    "newline-before-return": "error",
+    "no-alert": "error",
+    "no-await-in-loop": "error",
+    "no-console": "error",
+    "no-else-return": ["error", { "allowElseIf": false }],
+    "no-loop-func": "error",
+    "no-return-await": "error",
+    "no-shadow": "error",
+    "no-useless-return": "error",
+    "no-unused-vars": "error",
+    "no-var": "error",
+    "padding-line-between-statements": [
+      "error",
+      { "blankLine": "always", "prev": "*", "next": "export" }
+    ],
+    "prefer-const": [
+      "error",
+      { "destructuring": "all", "ignoreReadBeforeAssign": true }
+    ],
+    "prefer-destructuring": [
+      "error",
+      {
+        "VariableDeclarator": {
+          "array": false,
+          "object": true
+        },
+        "AssignmentExpression": {
+          "array": true,
+          "object": true
+        }
+      },
+      {
+        "enforceForRenamedProperties": false
+      }
+    ],
+    "prefer-template": "warn",
+    "import/exports-last": "error",
+    "import/first": "error",
+    "import/newline-after-import": "error",
+    "import/no-duplicates": "error",
+    "import/no-namespace": "error",
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", "internal"],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "builtin",
+            "position": "after"
+          },
+          {
+            "pattern": "@material-ui/**",
+            "group": "external",
+            "position": "after"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": [
+          "react",
+          "next",
+          "next-auth",
+          "builtin"
+        ],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ]
+  }
+}
