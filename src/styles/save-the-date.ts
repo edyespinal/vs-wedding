@@ -27,7 +27,7 @@ export const useStyles = createStyles(({ colors, spacing, white }) => ({
     left: 0,
     right: 0,
     zIndex: 99,
-    fontSize: 'clamp(2rem, 8vw , 4rem)',
+    fontSize: 'clamp(3rem, 8vw , 4rem)',
     fontFamily: 'Cherolina',
     fontWeight: 700,
   },
