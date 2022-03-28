@@ -1,6 +1,6 @@
 import { createStyles } from '@mantine/core'
 
-export const useStyles = createStyles(({ colors, spacing, white }) => ({
+export const useStyles = createStyles(({ spacing, white }) => ({
   wrapper: {
     display: 'grid',
     placeItems: 'center',
@@ -9,7 +9,7 @@ export const useStyles = createStyles(({ colors, spacing, white }) => ({
   },
   container: {
     backgroundColor: white,
-    border: `2px solid ${colors.blue[0]}`,
+    border: `3px solid #000`,
     textAlign: 'center',
     padding: spacing.md,
     display: 'grid',
@@ -28,8 +28,7 @@ export const useStyles = createStyles(({ colors, spacing, white }) => ({
     right: 0,
     zIndex: 99,
     fontSize: 'clamp(3rem, 8vw , 4rem)',
-    fontFamily: 'Cherolina',
-    fontWeight: 700,
+    fontFamily: 'Cherolina, cursive',
   },
   logo: {
     display: 'grid',

@@ -6,13 +6,18 @@ import { useStyles } from './styles'
 
 type Props = {
   children: ReactNode
+  color?: string
 }
 
-const Layout: FC<Props> = ({ children }) => {
+const Layout: FC<Props> = ({ children, color }) => {
   const { classes } = useStyles()
 
   return (
-    <Container fluid className={classes.layout}>
+    <Container
+      fluid
+      className={classes.layout}
+      style={{ backgroundColor: color }}
+    >
       {children}
     </Container>
   )
