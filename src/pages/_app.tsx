@@ -12,10 +12,9 @@ function MyApp({ Component, pageProps }: AppProps) {
     <Fragment>
       <Head>
         <title>Víctor & Stefanie</title>
-        <meta
-          name="description"
-          content="Víctor &amp; Stefanie Wedding Website"
-        />
+        <meta name="description" content="Víctor &amp; Stefanie Wedding" />
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=width, initial-scale=1.0" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
