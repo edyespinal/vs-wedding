@@ -9,11 +9,11 @@ export const useStyles = createStyles(({ spacing, white }) => ({
   },
   container: {
     backgroundColor: white,
-    border: `3px solid #000`,
     textAlign: 'center',
     padding: spacing.md,
     display: 'grid',
     gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+    boxShadow: `3px 3px 13px rgba(0,0,0,0.2)`,
   },
   image: {
     position: 'relative',

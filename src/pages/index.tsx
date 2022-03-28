@@ -24,10 +24,7 @@ const SaveTheDate: NextPage = () => {
       <Head>
         <title>Víctor & Stefanie | Save the Date</title>
         <meta name="description" content="Save the Date!" />
-        <meta
-          property="og:title"
-          content="Víctor &amp; Stefanie | Save the Date"
-        />
+        <meta property="og:title" content="Víctor &amp; Stefanie" />
         <meta property="og:url" content="https://victorstefanie.wedding/" />
         <meta property="og:description" content="Save the Date!" />
         <meta
@@ -35,7 +32,7 @@ const SaveTheDate: NextPage = () => {
           content="https://victorstefanie.wedding/img/foto.jpg/"
         />
       </Head>
-      <Layout color={colors.blue[0]}>
+      <Layout color={colors.gray[0]}>
         <Container className={classes.wrapper}>
           <div className={classes.container}>
             <Container className={classes.image}>
