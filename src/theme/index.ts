@@ -1,8 +1,8 @@
 import { MantineThemeOverride } from '@mantine/core'
 
 export const theme: MantineThemeOverride = {
-  white: '#fff',
-  black: '#333',
+  white: '#f4f4f5',
+  black: '#043852',
   colors: {
     blue: [
       '#043852',
@@ -12,7 +12,7 @@ export const theme: MantineThemeOverride = {
       '#043852',
       '#043852',
       '#043852',
-      '#043852',
+      '#023044',
       '#043852',
       '#043852',
     ],

@@ -1,0 +1,6 @@
+<svg id="Grupo_3" data-name="Grupo 3" xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72">
+  <path id="Trazado_5" data-name="Trazado 5" d="M57,6H54V3a3,3,0,0,0-6,0V6H24V3a3,3,0,0,0-6,0V6H15A15.018,15.018,0,0,0,0,21V57A15.018,15.018,0,0,0,15,72H57A15.018,15.018,0,0,0,72,57V21A15.018,15.018,0,0,0,57,6ZM6,21a9,9,0,0,1,9-9H57a9,9,0,0,1,9,9v3H6ZM57,66H15a9,9,0,0,1-9-9V30H66V57A9,9,0,0,1,57,66Z" fill="#003658"/>
+  <circle id="Elipse_1" data-name="Elipse 1" cx="4.5" cy="4.5" r="4.5" transform="translate(32 40)" fill="#003658"/>
+  <circle id="Elipse_2" data-name="Elipse 2" cx="4.5" cy="4.5" r="4.5" transform="translate(16.5 40.5)" fill="#003658"/>
+  <circle id="Elipse_3" data-name="Elipse 3" cx="4.5" cy="4.5" r="4.5" transform="translate(46.5 40.5)" fill="#003658"/>
+</svg>

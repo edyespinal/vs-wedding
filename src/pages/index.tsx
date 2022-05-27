@@ -4,14 +4,13 @@ import { Container, Text, Image, useMantineTheme } from '@mantine/core'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 
-import { SvLogo } from 'components/icons/VsLogo'
-import { Layout } from 'components/layout/Layout'
+import { SvLogo } from 'components/icons/VsLogo/VsLogo'
 import { useWindowSize } from 'hooks/useWindowSize'
 import { useStyles } from 'styles/save-the-date'
 
 const SaveTheDate: NextPage = () => {
   const { classes } = useStyles()
-  const { breakpoints, colors } = useMantineTheme()
+  const { breakpoints } = useMantineTheme()
   const [width] = useWindowSize()
   let size: Size = 'md'
 
@@ -32,7 +31,7 @@ const SaveTheDate: NextPage = () => {
           content="https://victorstefanie.wedding/img/foto.jpg/"
         />
       </Head>
-      <Layout color={colors.gray[0]}>
+      <Container fluid className={classes.layout}>
         <Container className={classes.wrapper}>
           <div className={classes.container}>
             <Container className={classes.image}>
@@ -52,7 +51,7 @@ const SaveTheDate: NextPage = () => {
             </Container>
           </div>
         </Container>
-      </Layout>
+      </Container>
     </Fragment>
   )
 }
