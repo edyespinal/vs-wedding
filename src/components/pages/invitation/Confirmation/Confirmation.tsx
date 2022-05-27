@@ -27,7 +27,14 @@ const Confirmation = () => {
         2
       </Title>
       <Text className="text-lg mb-8">Lugares en su honor</Text>
-      <Button type="button" variant="filled" size="lg" radius="xl" uppercase>
+      <Button
+        classNames={{ root: classes.root, filled: classes.filled }}
+        type="button"
+        variant="filled"
+        size="lg"
+        radius="xl"
+        uppercase
+      >
         Confirmar
       </Button>
       <div className={classes.rightImg}>

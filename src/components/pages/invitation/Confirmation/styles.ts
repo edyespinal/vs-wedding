@@ -1,6 +1,6 @@
 import { createStyles } from '@mantine/core'
 
-export const useStyles = createStyles(() => ({
+export const useStyles = createStyles(({ colors, white, radius }) => ({
   wrapper: {
     position: 'relative',
   },
@@ -15,5 +15,24 @@ export const useStyles = createStyles(() => ({
     top: 0,
     right: -220,
     transform: 'rotate(135deg)',
+  },
+  root: {
+    borderColor: colors.blue,
+    borderRadius: radius.xl,
+    borderStyle: 'solid',
+    borderWidth: '2px',
+    fontSize: '0.9rem',
+    minWidth: '12rem',
+    textTransform: 'uppercase',
+  },
+
+  filled: {
+    background: `${colors.blue[6]} !important`,
+    color: white,
+
+    '&:hover': {
+      backgroundColor: `${colors.blue[7]} !important`,
+      borderColor: colors.blue[7],
+    },
   },
 }))
