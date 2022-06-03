@@ -35,4 +35,18 @@ export const useStyles = createStyles(({ colors, white, radius }) => ({
       borderColor: colors.blue[7],
     },
   },
+  select: {
+    display: 'block',
+    fontSize: '2.5rem',
+    fontFamily: 'serif',
+    fontWeight: 700,
+    border: 'none',
+    width: '80px',
+  },
+  selected: {
+    color: 'white',
+  },
+  selectWrapper: {
+    padding: '1rem',
+  },
 }))

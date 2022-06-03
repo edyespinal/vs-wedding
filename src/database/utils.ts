@@ -1,7 +1,5 @@
 import { connect } from 'database'
 
-import { Guest } from './types'
-
 export const getGuestsCollection = async () => {
   const db = await connect()
 
@@ -14,4 +12,16 @@ export const formatDbResponse = (dbObject: any) => ({
   slug: dbObject.slug,
   invitados: dbObject.invitados,
   confirmacion: dbObject.confirmacion,
+  confirmados: dbObject.confirmados,
 })
+
+export const fetcher = (query: string) =>
+  fetch(`${process.env.BASE_URL}/api/graphql`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ query }),
+  })
+    .then((res) => res.json())
+    .then((json) => json.data)

@@ -1,17 +1,17 @@
 import { Fragment } from 'react'
 
 import { Container, Text, Image, useMantineTheme } from '@mantine/core'
+import { useViewportSize } from '@mantine/hooks'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 
 import { SvLogo } from 'components/icons/VsLogo/VsLogo'
-import { useWindowSize } from 'hooks/useWindowSize'
 import { useStyles } from 'styles/save-the-date'
 
 const SaveTheDate: NextPage = () => {
   const { classes } = useStyles()
   const { breakpoints } = useMantineTheme()
-  const [width] = useWindowSize()
+  const { width } = useViewportSize()
   let size: Size = 'md'
 
   if (width > breakpoints.sm) {

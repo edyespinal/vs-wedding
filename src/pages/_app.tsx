@@ -6,6 +6,7 @@ import type { AppProps } from 'next/app'
 import Head from 'next/head'
 
 import GlobalStyles from 'theme/Global'
+import { styles } from 'theme/styles'
 
 import { theme } from '../theme'
 
@@ -22,7 +23,12 @@ function MyApp({ Component, pageProps }: AppProps) {
 
       <GlobalStyles />
 
-      <MantineProvider withNormalizeCSS withGlobalStyles theme={theme}>
+      <MantineProvider
+        withGlobalStyles
+        withNormalizeCSS
+        theme={theme}
+        styles={styles}
+      >
         <Component {...pageProps} />
       </MantineProvider>
     </Fragment>
