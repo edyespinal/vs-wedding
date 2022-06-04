@@ -14,11 +14,11 @@ const GuestsTable = ({ guests, handleGuest }: Props) => {
 
   useEffect(() => {
     setConfirmados(() =>
-      guests.reduce((total, guest) => (total += guest.confirmados), 0)
+      guests.reduce((total, guest) => (total += +guest.confirmados), 0)
     )
 
     setInvitados(() =>
-      guests.reduce((total, guest) => (total += guest.invitados), 0)
+      guests.reduce((total, guest) => (total += +guest.invitados), 0)
     )
   }, [guests])
 

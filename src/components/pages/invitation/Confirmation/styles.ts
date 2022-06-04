@@ -39,11 +39,12 @@ export const useStyles = createStyles(({ colors, white, radius }) => ({
   },
   select: {
     display: 'block',
-    fontSize: '2.5rem',
+    fontSize: '2rem',
     fontFamily: 'serif',
     fontWeight: 700,
     border: 'none',
     width: '80px',
+    padding: '1rem',
   },
   selected: {
     color: 'white',

@@ -28,7 +28,7 @@ const Confirmation = ({ slug, invitados }: Props) => {
       confirmados: Number(confirmed),
     })
 
-    router.push('/invitacion/gracias')
+    router.push(`/invitacion/${slug}/gracias`)
   }
 
   return (
