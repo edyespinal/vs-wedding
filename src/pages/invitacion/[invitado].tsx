@@ -29,7 +29,7 @@ const Invitacion = ({ guest, invitados }: Props) => {
       <Header />
       <Information name={name} />
       <Container size="lg">
-        <Divider className="my-24" />
+        <Divider className="my-20" />
       </Container>
       <Confirmation slug={slug} invitados={invitados} />
       <Footer />

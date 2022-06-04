@@ -96,7 +96,7 @@ const Songs = () => {
       </Button>
       {!loading && songs.length ? (
         <Fragment>
-          <Title order={2}>Playlist</Title>
+          <Title order={2}>Dembow</Title>
           <List spacing="xs" size="lg" listStyleType="initial">
             {listItems}
           </List>

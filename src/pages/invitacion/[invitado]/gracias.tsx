@@ -1,6 +1,7 @@
 import { Container, createStyles, Text, Title } from '@mantine/core'
 import { NextPageContext } from 'next'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const useStyles = createStyles(({ breakpoints }) => ({
   wrapper: {
@@ -20,6 +21,7 @@ const useStyles = createStyles(({ breakpoints }) => ({
     justifyContent: 'space-between',
     height: '100vh',
     width: '100vw',
+    zIndex: -1,
 
     [`@media (min-width: ${breakpoints.md}px)`]: {
       flexDirection: 'row',
@@ -59,39 +61,63 @@ const Thanks = ({ guest }: Props) => {
 
   return (
     <Container className={classes.wrapper}>
-      <div>
-        <div className={classes.bgImages}>
-          <div className={classes.topLeftImage}>
-            <Image
-              src="/img/leaves.svg"
-              width={300}
-              height={300}
-              alt="Background decor"
-            />
-          </div>
-
-          <div className={classes.bottomRightImg}>
-            <Image
-              src="/img/leaves.svg"
-              width={400}
-              height={400}
-              alt="Background decor"
-            />
-          </div>
+      <div className={classes.bgImages}>
+        <div className={classes.topLeftImage}>
+          <Image
+            src="/img/leaves.svg"
+            width={300}
+            height={300}
+            alt="Background decor"
+          />
         </div>
+
+        <div className={classes.bottomRightImg}>
+          <Image
+            src="/img/leaves.svg"
+            width={400}
+            height={400}
+            alt="Background decor"
+          />
+        </div>
+      </div>
+      <div className="z-[100]">
         <Title
           align="center"
           style={{ fontFamily: 'Quicheflare' }}
-          className="mb-8 uppercase text-2xl md:text-4xl"
+          className="mb-8 uppercase text-3xl md:text-4xl"
         >
           Gracias <br />
           {guest.name}
         </Title>
-        <Container size="sm">
+        <Container size="xs">
           <Text align="center" className="mb-2">
             Esperamos celebrar juntos este 13 de agosto.
           </Text>
-          <Title align="center">🥳</Title>
+          <Title className="text-4xl" align="center">
+            🥳
+          </Title>
+
+          <div className="md:p-8 mt-8 md:mt-12">
+            <Link href="/canciones">
+              <a>
+                <Title
+                  align="center"
+                  style={{ fontFamily: 'Quicheflare' }}
+                  className="uppercase text-xl mb-4"
+                >
+                  Canciones que no pueden faltar en la boda
+                </Title>
+
+                <p>
+                  Así que como en navidad no puede faltar el piano merengue, en
+                  nuestra boda no puede faltar...
+                </p>
+                <p className="text-center underline mt-2">
+                  Compartir canciones
+                </p>
+              </a>
+            </Link>
+          </div>
         </Container>
       </div>
     </Container>

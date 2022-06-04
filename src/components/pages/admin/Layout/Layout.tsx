@@ -13,7 +13,7 @@ const AdminLayout = ({ children }: Props) => {
   const { classes } = useStyles()
 
   return (
-    <Container fluid className={`${classes.wrapper} p-40 md:p-20`}>
+    <Container fluid className={`${classes.wrapper} py-40 md:p-20`}>
       <div className={classes.bgImages}>
         <div className={classes.topLeftImage}>
           <Image

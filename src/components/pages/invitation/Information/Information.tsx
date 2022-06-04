@@ -1,5 +1,4 @@
-import { Center, Container, Divider, Image, Text, Title } from '@mantine/core'
-import Link from 'next/link'
+import { Center, Container, Image, Text, Title } from '@mantine/core'
 
 import { useStyles } from './styles'
 
@@ -115,25 +114,6 @@ const Information = ({ name }: Props) => {
         <p className="font-normal mt-1">BAC (Dólares): 741752011</p>
         <p className="font-normal mt-1">Bank of America Routing: #011000138</p>
       </Text>
-
-      <Divider className="my-8" />
-
-      <Link href="/canciones">
-        <a target="_blank" rel="noreferre noreferrer">
-          <Title
-            style={{ fontFamily: 'Quicheflare' }}
-            className="uppercase text-xl mb-4"
-          >
-            Canciones que no pueden faltar en la boda
-          </Title>
-
-          <p>
-            Así que como en navidad no puede faltar el piano merengue, en
-            nuestra boda no puede faltar...
-          </p>
-          <p className="underline mt-2">Compartir canciones</p>
-        </a>
-      </Link>
     </Container>
   )
 }
