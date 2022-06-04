@@ -1,4 +1,5 @@
 import { Container, createStyles, Text, Title } from '@mantine/core'
+import { NextPageContext } from 'next'
 import Image from 'next/image'
 
 const useStyles = createStyles(({ breakpoints }) => ({
@@ -48,7 +49,12 @@ const useStyles = createStyles(({ breakpoints }) => ({
   },
 }))
 
-const Thanks = () => {
+type Props = {
+  guest: Guest
+  invitados: { value: string; label: string }[]
+}
+
+const Thanks = ({ guest }: Props) => {
   const { classes } = useStyles()
 
   return (
@@ -78,17 +84,14 @@ const Thanks = () => {
           style={{ fontFamily: 'Quicheflare' }}
           className="mb-8 uppercase text-2xl md:text-4xl"
         >
-          Gracias
+          Gracias <br />
+          {guest.name}
         </Title>
         <Container size="sm">
-          <Text align="justify">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
-            qui ab, soluta doloremque tempore pariatur! Quos voluptas aspernatur
-            soluta magnam, nostrum, sint quam cum labore optio odio ducimus,
-            magni tenetur nulla sequi. Sint, officia quo! Neque eos quod
-            corrupti, quibusdam, laborum, rerum quas atque consequuntur
-            praesentium sequi vitae ut modi
+          <Text align="center" className="mb-2">
+            Esperamos celebrar junsto este 13 de agosto.
           </Text>
+          <Title align="center">🥳</Title>
         </Container>
       </div>
     </Container>
@@ -96,3 +99,23 @@ const Thanks = () => {
 }
 
 export default Thanks
+
+export async function getServerSideProps(context: NextPageContext) {
+  const {
+    res,
+    query: { invitado },
+  } = context
+
+  res?.setHeader(
+    'Cache-Control',
+    'public, s-maxage=10, stale-while-revalidate=59'
+  )
+
+  const guest = await fetch(
+    `${process.env.BASE_URL}/api/guests/${invitado}`
+  ).then((t) => t.json())
+
+  return {
+    props: { guest },
+  }
+}

@@ -25,19 +25,28 @@ const Countdown = () => {
         style={{ width: 'min(90vw, 720px)' }}
       >
         <div className="flex flex-col">
-          <Title style={{ fontFamily: 'Quicheflare' }} className="text-6xl">
+          <Title
+            style={{ fontFamily: 'Quicheflare' }}
+            className="text-5xl md:text-6xl"
+          >
             {String(days).replace('4', '3')}
           </Title>
           <Text className="uppercase font-normal">Días</Text>
         </div>
         <div>
-          <Title style={{ fontFamily: 'Quicheflare' }} className="text-6xl">
+          <Title
+            style={{ fontFamily: 'Quicheflare' }}
+            className="text-5xl md:text-6xl"
+          >
             {String(hours).replace('4', '3')}
           </Title>
           <Text className="uppercase font-normal">Horas</Text>
         </div>
         <div>
-          <Title style={{ fontFamily: 'Quicheflare' }} className="text-6xl">
+          <Title
+            style={{ fontFamily: 'Quicheflare' }}
+            className="text-5xl md:text-6xl"
+          >
             {String(minutes).replace('4', '3')}
           </Title>
           <Text className="uppercase font-normal">Minutos</Text>

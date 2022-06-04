@@ -5,6 +5,8 @@ import axios from 'axios'
 import Image from 'next/image'
 import router from 'next/router'
 
+import { ChevronDown } from 'components/icons/ChevronDown/ChevronDown'
+
 import { useStyles } from './styles'
 
 type Props = {
@@ -50,12 +52,14 @@ const Confirmation = ({ slug, invitados }: Props) => {
         <Select
           className="z-[100]"
           classNames={{
+            wrapper: classes.selectWrapper,
             input: classes.select,
             selected: classes.selected,
           }}
           data={invitados}
           variant="unstyled"
           onChange={handleChange}
+          rightSection={<ChevronDown />}
           required
         />
       </Center>

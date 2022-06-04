@@ -10,10 +10,15 @@ type Props = {
 
 const GuestsTable = ({ guests, handleGuest }: Props) => {
   const [confirmados, setConfirmados] = useState(0)
+  const [invitados, setInvitados] = useState(0)
 
   useEffect(() => {
     setConfirmados(() =>
       guests.reduce((total, guest) => (total += guest.confirmados), 0)
+    )
+
+    setInvitados(() =>
+      guests.reduce((total, guest) => (total += guest.invitados), 0)
     )
   }, [guests])
 
@@ -44,7 +49,9 @@ const GuestsTable = ({ guests, handleGuest }: Props) => {
           <tr>
             <td className="pl-2">Total</td>
             <td></td>
-            <td className="text-center">{confirmados}</td>
+            <td className="text-center">
+              {confirmados} / {invitados}
+            </td>
           </tr>
         </tfoot>
       </Table>

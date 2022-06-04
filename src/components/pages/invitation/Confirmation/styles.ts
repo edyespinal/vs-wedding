@@ -48,7 +48,13 @@ export const useStyles = createStyles(({ colors, white, radius }) => ({
   selected: {
     color: 'white',
   },
-  selectWrapper: {
+  input: {
     padding: '1rem',
+  },
+  selectWrapper: {
+    padding: '0.5rem',
+    borderBottomWidth: '1px',
+    borderBottomColor: 'blue',
+    borderBottomStyle: 'solid',
   },
 }))

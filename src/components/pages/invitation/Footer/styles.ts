@@ -10,7 +10,6 @@ export const useStyles = createStyles(({ breakpoints, white }) => ({
     display: 'grid',
     placeItems: 'center',
     height: '318px',
-    marginTop: '4rem',
     textTransform: 'uppercase',
 
     [`@media (min-width: ${breakpoints.md}px)`]: {
