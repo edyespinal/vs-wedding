@@ -48,6 +48,7 @@ const Confirmation = ({ slug, invitados }: Props) => {
       <Text className="text-lg">Hemos reservado</Text>
       <Center className="grid place-items-center py-4">
         <Select
+          className="z-[100]"
           classNames={{
             input: classes.select,
             selected: classes.selected,
@@ -61,6 +62,7 @@ const Confirmation = ({ slug, invitados }: Props) => {
 
       <Text className="text-lg mb-8">Lugares en su honor</Text>
       <Button
+        className="z-[100]"
         type="button"
         variant="filled"
         size="lg"

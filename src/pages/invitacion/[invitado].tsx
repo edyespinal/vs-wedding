@@ -21,13 +21,13 @@ type Props = {
 }
 
 const Invitacion = ({ guest, invitados }: Props) => {
-  const { slug } = guest
+  const { name, slug } = guest
   const { classes } = useStyles()
 
   return (
     <Container fluid px={0} className={classes.wrapper}>
       <Header />
-      <Information />
+      <Information name={name} />
       <Container size="lg">
         <Divider className="my-24" />
       </Container>

@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react'
+
 import { Table } from '@mantine/core'
 
 type Props = {
@@ -7,16 +9,22 @@ type Props = {
 }
 
 const GuestsTable = ({ guests, handleGuest }: Props) => {
-  let totalGuests = 0
+  const [confirmados, setConfirmados] = useState(0)
+
+  useEffect(() => {
+    setConfirmados(() =>
+      guests.reduce((total, guest) => (total += guest.confirmados), 0)
+    )
+  }, [guests])
 
   const rows = guests.map((guest) => {
-    totalGuests = guest.confirmados
-
     return (
       <tr key={guest.id} onClick={() => handleGuest(guest)}>
         <td>{guest.name}</td>
         <td className="text-center">{guest.confirmacion ? 'Sí' : 'No'}</td>
-        <td className="text-center">{guest.confirmados}</td>
+        <td className="text-center">
+          {guest.confirmados} / {guest.invitados}
+        </td>
       </tr>
     )
   })
@@ -36,7 +44,7 @@ const GuestsTable = ({ guests, handleGuest }: Props) => {
           <tr>
             <td className="pl-2">Total</td>
             <td></td>
-            <td className="text-center">{totalGuests}</td>
+            <td className="text-center">{confirmados}</td>
           </tr>
         </tfoot>
       </Table>

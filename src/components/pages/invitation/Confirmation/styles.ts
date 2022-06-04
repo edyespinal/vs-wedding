@@ -9,12 +9,14 @@ export const useStyles = createStyles(({ colors, white, radius }) => ({
     top: 0,
     left: -220,
     transform: 'rotate(-45deg)',
+    zIndex: 0,
   },
   rightImg: {
     position: 'absolute',
     top: 0,
     right: -220,
     transform: 'rotate(135deg)',
+    zIndex: 0,
   },
   root: {
     borderColor: colors.blue,

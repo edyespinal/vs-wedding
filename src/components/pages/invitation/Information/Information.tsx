@@ -3,7 +3,11 @@ import Image from 'next/image'
 
 import { useStyles } from './styles'
 
-const Information = () => {
+type Props = {
+  name: string
+}
+
+const Information = ({ name }: Props) => {
   const { classes } = useStyles()
 
   return (
@@ -12,7 +16,7 @@ const Information = () => {
         style={{ fontFamily: 'Quicheflare' }}
         className="uppercase text-3xl mb-4"
       >
-        Querido Invitado
+        {name}
       </Title>
       <Text className="text-lg leading-6 mb-12">
         Estamos muy contentos de invitarte a nuestra boda. <br />
@@ -31,6 +35,7 @@ const Information = () => {
         href="https://goo.gl/maps/SpfH9NP2maAgRqea9"
         target="_blank"
         rel="noreferrer"
+        className="block cursor-pointer"
       >
         <Image
           src="/img/location.svg"
@@ -39,7 +44,10 @@ const Information = () => {
           alt="Calendar icon"
         />
         <Text className="uppercase my-4 text-xl font-bold">
-          Liquidambar, Santa Lucía, Honduras
+          Liquidambar, Santa Lucía, Honduras <br />
+          <span className="lowercase text-sm underline font-normal">
+            ¿Cómo llegar?
+          </span>
         </Text>
       </a>
       <span className={classes.goldenLine}></span>
