@@ -89,7 +89,7 @@ const Thanks = ({ guest }: Props) => {
         </Title>
         <Container size="sm">
           <Text align="center" className="mb-2">
-            Esperamos celebrar junsto este 13 de agosto.
+            Esperamos celebrar juntos este 13 de agosto.
           </Text>
           <Title align="center">🥳</Title>
         </Container>

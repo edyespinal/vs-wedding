@@ -16,6 +16,7 @@ type Props = {
 
 const Confirmation = ({ slug, invitados }: Props) => {
   const [confirmed, setConfirmed] = useState(0)
+  const [loading, setLoading] = useState(false)
   const { classes } = useStyles()
 
   const handleChange = (e: any) => {
@@ -23,6 +24,8 @@ const Confirmation = ({ slug, invitados }: Props) => {
   }
 
   const handleConfirmation = async () => {
+    setLoading(true)
+
     await axios.patch(`/api/guests/${slug}`, {
       confirmacion: true,
       confirmados: Number(confirmed),
@@ -53,13 +56,13 @@ const Confirmation = ({ slug, invitados }: Props) => {
           className="z-[100]"
           classNames={{
             wrapper: classes.selectWrapper,
-            input: classes.select,
+            input: classes.input,
             selected: classes.selected,
           }}
           data={invitados}
-          variant="unstyled"
           onChange={handleChange}
           rightSection={<ChevronDown />}
+          size="md"
           required
         />
       </Center>
@@ -70,6 +73,7 @@ const Confirmation = ({ slug, invitados }: Props) => {
         type="button"
         variant="filled"
         size="lg"
+        loading={loading}
         onClick={handleConfirmation}
       >
         Confirmar

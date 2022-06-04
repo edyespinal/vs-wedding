@@ -37,25 +37,22 @@ export const useStyles = createStyles(({ colors, white, radius }) => ({
       borderColor: colors.blue[7],
     },
   },
-  select: {
-    display: 'block',
-    fontSize: '2rem',
-    fontFamily: 'serif',
-    fontWeight: 700,
-    border: 'none',
-    width: '80px',
-    padding: '1rem',
-  },
   selected: {
     color: 'white',
   },
   input: {
-    padding: '1rem',
+    background: 'transparent',
+    border: 'none',
+    fontFamily: 'serif',
+    fontSize: '2rem',
+    fontWeight: 700,
+    textAlign: 'center',
+    height: '80px',
   },
   selectWrapper: {
-    padding: '0.5rem',
     borderBottomWidth: '1px',
     borderBottomColor: 'blue',
     borderBottomStyle: 'solid',
+    width: '120px',
   },
 }))
