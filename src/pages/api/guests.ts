@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import slugify from 'slugify'
 
-import { formatDbResponse, getGuestsCollection } from 'database/utils'
+import { formatGuestsResponse, getGuestsCollection } from 'database/utils'
 
 export default async function guests(
   req: NextApiRequest,
@@ -12,7 +12,10 @@ export default async function guests(
 
   switch (method) {
     case 'GET':
-      const allGuests = await collection.find().map(formatDbResponse).toArray()
+      const allGuests = await collection
+        .find()
+        .map(formatGuestsResponse)
+        .toArray()
       res.status(200).json(allGuests)
 
       break

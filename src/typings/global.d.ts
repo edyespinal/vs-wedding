@@ -8,3 +8,9 @@ type Guest = {
   confirmacion: boolean
   confirmados: number
 }
+
+type Song = {
+  id?: string
+  artist: string
+  title: string
+}

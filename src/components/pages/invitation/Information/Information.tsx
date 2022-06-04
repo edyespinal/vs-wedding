@@ -1,4 +1,5 @@
 import { Center, Container, Divider, Image, Text, Title } from '@mantine/core'
+import Link from 'next/link'
 
 import { useStyles } from './styles'
 
@@ -67,7 +68,7 @@ const Information = ({ name }: Props) => {
       <span className={classes.goldenLine}></span>
 
       <a
-        href="https://goo.gl/maps/SpfH9NP2maAgRqea9"
+        href="https://goo.gl/maps/TgAifN3MxHQrVmqW8"
         target="_blank"
         rel="noreferrer"
         className="block cursor-pointer"
@@ -117,24 +118,22 @@ const Information = ({ name }: Props) => {
 
       <Divider className="my-8" />
 
-      <a
-        href="https://forms.gle/FxM416bM1LX2Jrxd9"
-        target="_blank"
-        rel="noreferre noreferrer"
-      >
-        <Title
-          style={{ fontFamily: 'Quicheflare' }}
-          className="uppercase text-xl mb-4"
-        >
-          Canciones que no pueden faltar en la boda
-        </Title>
+      <Link href="/canciones">
+        <a target="_blank" rel="noreferre noreferrer">
+          <Title
+            style={{ fontFamily: 'Quicheflare' }}
+            className="uppercase text-xl mb-4"
+          >
+            Canciones que no pueden faltar en la boda
+          </Title>
 
-        <p>
-          Así que como en navidad no puede faltar el piano merengue, en nuestra
-          boda no puede faltar...
-        </p>
-        <p className="underline mt-2">Compartir canciones</p>
-      </a>
+          <p>
+            Así que como en navidad no puede faltar el piano merengue, en
+            nuestra boda no puede faltar...
+          </p>
+          <p className="underline mt-2">Compartir canciones</p>
+        </a>
+      </Link>
     </Container>
   )
 }
