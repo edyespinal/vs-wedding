@@ -21,11 +21,12 @@ export default async function getSongs(
       break
 
     case 'POST':
-      const { artist, title } = req.body
+      const { artist, title, invitado } = req.body
 
       const newSong = await collection.insertOne({
         artist,
         title,
+        invitado,
       })
 
       res.status(200).json({

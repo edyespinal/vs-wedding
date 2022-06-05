@@ -25,4 +25,5 @@ export const formatSongsResponse = (song: any) => ({
   id: song._id.toHexString(),
   artist: song.artist,
   title: song.title,
+  invitado: song.invitado,
 })

@@ -2,6 +2,7 @@ import { Fragment, useEffect, useState } from 'react'
 
 import { Button, List, Loader, Text, TextInput, Title } from '@mantine/core'
 import axios from 'axios'
+import { useRouter } from 'next/router'
 
 import { AdminLayout } from 'components/pages/admin/Layout/Layout'
 import { AdminTitle } from 'components/pages/admin/Title/Title'
@@ -14,7 +15,12 @@ const Songs = () => {
   const [song, setSong] = useState({
     artist: '',
     title: '',
+    invitado: '',
   })
+
+  const {
+    query: { guest: guestName },
+  } = useRouter()
 
   useEffect(() => {
     async function getGuests() {
@@ -30,7 +36,13 @@ const Songs = () => {
   const listItems = songs.map((currentSong) => {
     return (
       <List.Item key={currentSong.id}>
-        {currentSong.artist} - {currentSong.title}
+        <span>
+          {currentSong.artist} - {currentSong.title}
+        </span>
+        <span className="block text-xs text-[#888] pl-3">
+          {' '}
+          - {currentSong.invitado ?? 'Stef y Víctor'}
+        </span>
       </List.Item>
     )
   })
@@ -48,6 +60,7 @@ const Songs = () => {
     const dbResponse = await axios.post('/api/songs', {
       artist: song.artist,
       title: song.title,
+      invitado: (guestName as string) ?? '',
     })
 
     setSongs([
@@ -56,11 +69,13 @@ const Songs = () => {
         id: dbResponse.data.id,
         artist: song.artist,
         title: song.title,
+        invitado: (guestName as string) ?? '',
       },
     ])
 
     setAdding(false)
     setSong({
+      ...song,
       artist: '',
       title: '',
     })
@@ -70,6 +85,8 @@ const Songs = () => {
     <AdminLayout>
       <AdminTitle />
       <Text>¿Qué no puede faltar?</Text>
+      <Text className="text-xs">Puedes ver la lista de canciones abajo.</Text>
+
       <TextInput
         value={song.artist}
         id="artist"

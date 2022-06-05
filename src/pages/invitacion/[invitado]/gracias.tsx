@@ -98,7 +98,7 @@ const Thanks = ({ guest }: Props) => {
           </Title>
 
           <div className="md:p-8 mt-8 md:mt-12">
-            <Link href="/canciones">
+            <Link href={`/canciones?guest=${guest.name}`}>
               <a>
                 <Title
                   align="center"
