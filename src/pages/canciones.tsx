@@ -40,7 +40,6 @@ const Songs = () => {
           {currentSong.artist} - {currentSong.title}
         </span>
         <span className="block text-xs text-[#888] pl-3">
-          {' '}
           - {currentSong.invitado ?? 'Stef y Víctor'}
         </span>
       </List.Item>
@@ -57,19 +56,22 @@ const Songs = () => {
   const handleAddSong = async () => {
     setAdding(true)
 
-    const dbResponse = await axios.post('/api/songs', {
+    const newSong: Song = {
       artist: song.artist,
       title: song.title,
-      invitado: (guestName as string) ?? '',
-    })
+    }
+
+    if (guestName) {
+      newSong.invitado = guestName as string
+    }
+
+    const dbResponse = await axios.post('/api/songs', newSong)
 
     setSongs([
       ...songs,
       {
         id: dbResponse.data.id,
-        artist: song.artist,
-        title: song.title,
-        invitado: (guestName as string) ?? '',
+        ...newSong,
       },
     ])
 

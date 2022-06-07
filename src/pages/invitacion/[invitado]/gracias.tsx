@@ -115,6 +115,9 @@ const Thanks = ({ guest }: Props) => {
                 <p className="text-center underline mt-2">
                   Compartir canciones
                 </p>
+                <div className="grid place-items-center mt-4">
+                  <Image src="/img/vinyl.svg" height={64} width={64} alt="" />
+                </div>
               </a>
             </Link>
           </div>

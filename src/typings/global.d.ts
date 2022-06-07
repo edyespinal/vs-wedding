@@ -13,5 +13,5 @@ type Song = {
   id?: string
   artist: string
   title: string
-  invitado: string
+  invitado?: string
 }

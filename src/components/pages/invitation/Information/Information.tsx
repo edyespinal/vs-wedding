@@ -86,12 +86,7 @@ const Information = ({ name }: Props) => {
       <span className={classes.goldenLine}></span>
 
       <Center>
-        <Image
-          src="/img/clock.svg"
-          width={64}
-          height={64}
-          alt="Calendar icon"
-        />
+        <Image src="/img/dress.svg" width={128} height={64} alt="Dress icon" />
       </Center>
       <Text className="uppercase my-4 text-xl font-bold">
         Vestimenta formal
@@ -100,12 +95,7 @@ const Information = ({ name }: Props) => {
       <span className={classes.goldenLine}></span>
 
       <Center>
-        <Image
-          src="/img/clock.svg"
-          width={64}
-          height={64}
-          alt="Calendar icon"
-        />
+        <Image src="/img/regalo.svg" width={64} height={64} alt="Gift icon" />
       </Center>
       <Text className="uppercase my-4 text-md font-bold">
         Su presencia es nuestro mejor regalo. <br />
