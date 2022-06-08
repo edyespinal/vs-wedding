@@ -30,8 +30,8 @@ const Information = ({ name }: Props) => {
         Los Novios
       </Title>
       <Text className="text-lg leading-6 mb-12">
-        Andábamos en la vida por diferentes rumbos pero en el mismo camino.Y un
-        día el tiempo nos encontró lado a lado, mano a mano, luego nos
+        Andábamos en la vida por diferentes rumbos, pero en el mismo camino.
+        <br /> Un día el tiempo nos encontró lado a lado, mano a mano; luego nos
         conocimos, nos hicimos amigos, nos enamoramos y unos años después
         queremos celebrar que es el momento de estar juntos para siempre.
       </Text>
