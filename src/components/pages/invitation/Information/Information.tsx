@@ -30,10 +30,10 @@ const Information = ({ name }: Props) => {
         Los Novios
       </Title>
       <Text className="text-lg leading-6 mb-12">
-        Todo comenzó cuando teníamos 16 años y fue ahí, donde supimos que éramos
-        el uno para el otro. Con amor, confianza, respeto, paciencia, hemos
-        construido nuestras vidas y hemos crecido jutos. Unos cuantos años
-        después queremos celebrar que nuestra historia es cada vez más bonita.
+        Andábamos en la vida por diferentes rumbos pero en el mismo camino.Y un
+        día el tiempo nos encontró lado a lado, mano a mano, luego nos
+        conocimos, nos hicimos amigos, nos enamoramos y unos años después
+        queremos celebrar que es el momento de estar juntos para siempre.
       </Text>
 
       <div className="mb-16">
@@ -44,7 +44,7 @@ const Information = ({ name }: Props) => {
         style={{ fontFamily: 'Quicheflare' }}
         className="uppercase text-3xl mb-8"
       >
-        La Fiesta
+        La Celebración
       </Title>
 
       <Center>
@@ -55,12 +55,7 @@ const Information = ({ name }: Props) => {
       <span className={classes.goldenLine}></span>
 
       <Center>
-        <Image
-          src="/img/clock.svg"
-          width={64}
-          height={64}
-          alt="Calendar icon"
-        />
+        <Image src="/img/clock.svg" width={64} height={64} alt="Clock icon" />
       </Center>
       <Text className="uppercase my-4 text-xl font-bold">5:00 PM</Text>
 
@@ -73,7 +68,7 @@ const Information = ({ name }: Props) => {
         className="block cursor-pointer"
       >
         <Center>
-          <Image src="/img/location.svg" width="64px" alt="Calendar icon" />
+          <Image src="/img/location.svg" width="64px" alt="Location icon" />
         </Center>
         <Text className="uppercase my-4 text-xl font-bold">
           Liquidambar, Santa Lucía, Honduras <br />
