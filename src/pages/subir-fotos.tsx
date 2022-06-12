@@ -3,11 +3,16 @@ import { Fragment, useState } from 'react'
 
 import { Button, Group, Text } from '@mantine/core'
 import { Dropzone } from '@mantine/dropzone'
-import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage'
+import {
+  getDownloadURL,
+  getStorage,
+  ref,
+  uploadBytesResumable,
+} from 'firebase/storage'
 
 import { AdminLayout } from 'components/pages/admin/Layout/Layout'
 import { AdminTitle } from 'components/pages/admin/Title/Title'
-import { storage } from 'storage'
+import { app } from 'storage'
 
 const SubirFotos = () => {
   const [droppedFiles, setDroppedFiles] = useState({
@@ -36,6 +41,7 @@ const SubirFotos = () => {
       return
     }
 
+    const storage = getStorage(app)
     const files: File[] = Array.from(filesList)
 
     for (const file of files) {

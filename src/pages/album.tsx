@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react'
 
 import { Center, Container, Image, Loader } from '@mantine/core'
-import { getDownloadURL, list, ref } from 'firebase/storage'
+import { getDownloadURL, getStorage, list, ref } from 'firebase/storage'
 import { GetServerSidePropsContext } from 'next'
 
 import { AdminLayout } from 'components/pages/admin/Layout/Layout'
 import { AdminTitle } from 'components/pages/admin/Title/Title'
 import { useInfiniteScroll } from 'hooks/useInfiniteScroll'
-import { storage } from 'storage'
+import { app } from 'storage'
 
 interface Props {
   urls: string[]
@@ -22,6 +22,7 @@ const SubirFotos = ({
   const [nextBatchToken, setNextBatchToken] = useState(firstBatchToken)
   const [isEndOfPage, setIsEndOfPage] = useInfiniteScroll()
 
+  const storage = getStorage(app)
   const listRef = ref(storage, 'fotos')
 
   const fetchMoreUrls = async (nextPageToken: string | undefined) => {
@@ -61,7 +62,7 @@ const SubirFotos = ({
             <Image key={url} src={url} alt="Foto" className="mb-2" />
           ))}
       </Container>
-      <Center>{!isEndOfPage && !nextBatchToken && <Loader size="xl" />}</Center>
+      <Center>{isEndOfPage && nextBatchToken && <Loader size="xl" />}</Center>
     </AdminLayout>
   )
 }
@@ -74,6 +75,7 @@ export async function getServerSideProps({ res }: GetServerSidePropsContext) {
     'public, s-maxage=10, stale-while-revalidate=59'
   )
 
+  const storage = getStorage(app)
   const listRef = ref(storage, 'fotos')
   const firstBatch = await list(listRef, { maxResults: 10 })
 
