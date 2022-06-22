@@ -36,6 +36,12 @@ const GuestsTable = ({ guests, handleGuest }: Props) => {
 
   return (
     <div className="lg:w-1/2 xl:w-1/2 z-[50]">
+      <div className="flex justify-between items-center px-8 py-4 font-bold text-md mb-8 mr-8 border border-2 border-slate-300 rounded">
+        <span>Confirmados:</span>{' '}
+        <span className="text-lg">
+          {confirmados} / {invitados}
+        </span>
+      </div>
       <Table highlightOnHover className="mb-6 cursor-pointer">
         <thead>
           <tr>
@@ -45,15 +51,6 @@ const GuestsTable = ({ guests, handleGuest }: Props) => {
           </tr>
         </thead>
         <tbody>{rows}</tbody>
-        <tfoot className="font-bold border-t-4 border-gray-300">
-          <tr>
-            <td className="pl-2">Total</td>
-            <td></td>
-            <td className="text-center">
-              {confirmados} / {invitados}
-            </td>
-          </tr>
-        </tfoot>
       </Table>
     </div>
   )
