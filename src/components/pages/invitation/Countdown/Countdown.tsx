@@ -34,7 +34,7 @@ const Countdown = () => {
             style={{ fontFamily: 'Unna' }}
             className="text-6xl md:text-7xl"
           >
-            {String(hours).replace('4', '3')}
+            {String(hours)}
           </Title>
           <Text className="uppercase font-normal">Horas</Text>
         </div>
@@ -43,7 +43,7 @@ const Countdown = () => {
             style={{ fontFamily: 'Unna' }}
             className="text-6xl md:text-7xl"
           >
-            {String(minutes).replace('4', '3')}
+            {String(minutes)}
           </Title>
           <Text className="uppercase font-normal">Minutos</Text>
         </div>
