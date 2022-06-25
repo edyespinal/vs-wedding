@@ -1,22 +1,18 @@
 import { Container, Text, Title } from '@mantine/core'
 
 import { useStyles } from './styles'
-
-const ONE_DAY = 1000 * 60 * 60 * 24
-const ONE_HOUR = 1000 * 60 * 60
-const ONE_MINUTE = 1000 * 60
+import {
+  calculateDaysUntilWedding,
+  calculateHoursUntilWedding,
+  calculateMinutesUntilWedding,
+} from './utils'
 
 const Countdown = () => {
+  const days = calculateDaysUntilWedding()
+  const hours = calculateHoursUntilWedding()
+  const minutes = calculateMinutesUntilWedding()
+
   const { classes } = useStyles()
-
-  const weddingDate = new Date('August, 13, 2022, 16:00').getTime()
-  const now = new Date().getTime()
-
-  const diff = weddingDate - now
-
-  const days = Math.floor(diff / ONE_DAY)
-  const hours = Math.floor((diff % ONE_DAY) / ONE_HOUR)
-  const minutes = Math.floor((diff % ONE_HOUR) / ONE_MINUTE)
 
   return (
     <section className={classes.countdown}>
@@ -26,17 +22,17 @@ const Countdown = () => {
       >
         <div className="flex flex-col">
           <Title
-            style={{ fontFamily: 'Quicheflare' }}
-            className="text-5xl md:text-6xl"
+            style={{ fontFamily: 'Unna' }}
+            className="text-6xl md:text-7xl"
           >
-            {String(days).replace('4', '3')}
+            {String(days)}
           </Title>
           <Text className="uppercase font-normal">Días</Text>
         </div>
         <div>
           <Title
-            style={{ fontFamily: 'Quicheflare' }}
-            className="text-5xl md:text-6xl"
+            style={{ fontFamily: 'Unna' }}
+            className="text-6xl md:text-7xl"
           >
             {String(hours).replace('4', '3')}
           </Title>
@@ -44,8 +40,8 @@ const Countdown = () => {
         </div>
         <div>
           <Title
-            style={{ fontFamily: 'Quicheflare' }}
-            className="text-5xl md:text-6xl"
+            style={{ fontFamily: 'Unna' }}
+            className="text-6xl md:text-7xl"
           >
             {String(minutes).replace('4', '3')}
           </Title>

@@ -51,6 +51,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Unna';
+  src: url('/fonts/Unna-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
 html,
 body {
   padding: 0;
